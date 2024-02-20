@@ -64,6 +64,9 @@ public class ApiController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response consolidadoOperador(@QueryParam("oper") String oper){
         SalidaBeanDto salida = recargaBean.consolidadoRecargasOperador(oper);
-        return Response.status(salida.getStatus()).entity(salida.getMensajeSalidaDto()).build();
+        return Response
+                .status(salida.getStatus())
+                .entity(salida.getMensajeSalidaDto())
+                .build();
     }
 }
